@@ -1,4 +1,3 @@
-// LoginForm.tsx
 import React, { useState } from "react";
 import { EmailStep } from "./SignUpForm/EmailStep";
 import { PasswordStep } from "./SignUpForm/PasswordStep";
@@ -51,10 +50,11 @@ export const LoginForm: React.FC = () => {
     return true;
   };
 
-  // 각 스텝별로 적절한 컴포넌트 렌더링
   return (
     <div className="login-form-container">
-      <h1>덕업일치 계정으로 로그인해주세요.</h1>
+      <div className="logo">FanShare</div>
+      <h1 className="login-title">덕업일치 계정으로 로그인해주세요.</h1>
+
       {step === "login" && (
         <form>
           <div className="form-group">
@@ -86,6 +86,7 @@ export const LoginForm: React.FC = () => {
           </button>
         </form>
       )}
+
       {step === "email" && (
         <EmailStep
           email={formData.email}
@@ -96,6 +97,7 @@ export const LoginForm: React.FC = () => {
           }}
         />
       )}
+
       {step === "password" && (
         <PasswordStep
           password={formData.password}
@@ -107,6 +109,7 @@ export const LoginForm: React.FC = () => {
           }}
         />
       )}
+
       {step === "username" && (
         <UsernameStep
           username={formData.username}
@@ -119,6 +122,23 @@ export const LoginForm: React.FC = () => {
           }}
         />
       )}
+
+      <div className="forgot-password">비밀번호를 잊어버리셨나요?</div>
+
+      <div className="or-divider">
+        <span>혹은</span>
+      </div>
+
+      <div className="signup-link">
+        아직 계정이 없다면?{" "}
+        <button
+          type="button"
+          className="signup-link-button"
+          onClick={() => setStep("email")}
+        >
+          덕업일치 계정으로 가입하기
+        </button>
+      </div>
     </div>
   );
 };
