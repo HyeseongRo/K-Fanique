@@ -10,7 +10,7 @@ interface UsernameStepProps {
 }
 
 // UsernameStep 컴포넌트 정의
-const UsernameStep: React.FC<UsernameStepProps> = ({
+export const UsernameStep: React.FC<UsernameStepProps> = ({
   username,
   onUsernameChange,
   error,
@@ -49,5 +49,3 @@ const UsernameStep: React.FC<UsernameStepProps> = ({
     </div>
   );
 };
-
-export default UsernameStep;

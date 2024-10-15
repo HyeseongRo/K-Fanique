@@ -10,7 +10,7 @@ interface PasswordStepProps {
 }
 
 // PasswordStep 컴포넌트 정의
-const PasswordStep: React.FC<PasswordStepProps> = ({
+export const PasswordStep: React.FC<PasswordStepProps> = ({
   password,
   onPasswordChange,
   error,
@@ -50,5 +50,3 @@ const PasswordStep: React.FC<PasswordStepProps> = ({
     </div>
   );
 };
-
-export default PasswordStep;

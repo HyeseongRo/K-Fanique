@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import EmailStep from "./EmailStep";
-import PasswordStep from "./PasswordStep";
-import UsernameStep from "./UsernameStep";
+import { EmailStep } from "./EmailStep";
+import { PasswordStep } from "./PasswordStep";
+import { UsernameStep } from "./UsernameStep";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import axios from "axios";
 import { z } from "zod";
@@ -25,7 +25,7 @@ const signupSchema = z.object({
 });
 
 // SignUpForm 컴포넌트 정의
-const SignUpForm: React.FC = () => {
+export const SignUpForm: React.FC = () => {
   // 사용자 입력 데이터를 상태로 관리
   const [formData, setFormData] = useState({
     email: "",
@@ -153,5 +153,3 @@ const SignUpForm: React.FC = () => {
     </div>
   );
 };
-
-export default SignUpForm;

@@ -9,7 +9,7 @@ interface EmailStepProps {
 }
 
 // EmailStep 컴포넌트 정의
-const EmailStep: React.FC<EmailStepProps> = ({
+export const EmailStep: React.FC<EmailStepProps> = ({
   email,
   onEmailChange,
   error,
@@ -40,5 +40,3 @@ const EmailStep: React.FC<EmailStepProps> = ({
     </div>
   );
 };
-
-export default EmailStep;
